@@ -1,9 +1,9 @@
 properties([
   parameters([
-    string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch to build (e.g., main or dev)')
-    string(name: 'AMAZON_EC2_USER', defaultValue: 'ubuntu', description: 'EC2 user name')
-    string(name: 'AMAZON_EC2_IP', defaultValue: '172.31.3.49', description: 'IP private IP')
-    string(name: 'COMPOSE_FILE', defaultValue: 'docker-compose.yml', description: 'Compose file path')
+    string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch to build (e.g., main or dev)'),
+    string(name: 'AMAZON_EC2_USER', defaultValue: 'ubuntu', description: 'EC2 user name'),
+    string(name: 'AMAZON_EC2_IP', defaultValue: '172.31.3.49', description: 'IP private IP'),
+    string(name: 'COMPOSE_FILE', defaultValue: 'docker-compose.yml', description: 'Compose file path'),
     string(name: 'KEY_PATH', defaultValue: '/var/lib/jenkins/workspace/key.pem', description: 'kep file path')
   ])
 ])
