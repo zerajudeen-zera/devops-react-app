@@ -33,7 +33,7 @@ pipeline{
                     if(env.BRANCH_NAME == 'dev'){
                         sh "docker tag ${IMAGE_NAME}:${TAG} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}-dev:${TAG}"
                         sh "docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}-dev:${TAG}"
-                    } else if(env.BRANCH_NAME == 'master'){
+                    } else if(env.BRANCH_NAME == 'main'){
                         sh "docker tag ${IMAGE_NAME}:${TAG} ${DOCKERHUB_USERNAME}/${IMAGE_NAME}-prod:${TAG}"
                         sh "docker push ${DOCKERHUB_USERNAME}/${IMAGE_NAME}-prod:${TAG}"
                     }
