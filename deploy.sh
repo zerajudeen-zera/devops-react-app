@@ -32,7 +32,7 @@
 
 set -e  # Exit on any error
 
-echo "🚀 Starting deployment process to the Amazon EC2 server..."
+echo "🚀 Starting deployment process to the Amazon EC2 server...."
 
 # Validate required environment variables
 : "${AMAZON_EC2_USER:?Environment variable AMAZON_EC2_USER not set}"
