@@ -48,6 +48,7 @@ pipeline{
                 expression { BRANCH_NAME == 'main'}
             }
             steps{
+                sh 'chmod +x deploy.sh'
                 sh './deploy.sh'
             }
 
