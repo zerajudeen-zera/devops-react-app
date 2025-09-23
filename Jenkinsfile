@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage("git checkout"){
             steps{
-                git url 'https://github.com/sriram-R-krishnan/devops-build'
+                git url 'https://github.com/zerajudeen-zera/devops-react-app.git'
 
             }
             
