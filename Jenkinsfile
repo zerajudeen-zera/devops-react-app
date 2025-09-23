@@ -11,7 +11,7 @@ pipeline{
                 git url: 'https://github.com/zerajudeen-zera/devops-react-app.git'
             }
         }
-        stage("build"){
+        stage("building"){
             steps{
                 sh './build.sh'
             }
