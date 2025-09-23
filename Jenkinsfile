@@ -12,7 +12,7 @@ pipeline{
         TAG = 'latest'
     }
     stages{
-        stage("building"){
+        stage("building image"){
             steps{
                 sh './build.sh'
             }
