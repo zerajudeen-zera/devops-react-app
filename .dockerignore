@@ -1,0 +1,5 @@
+deploy.sh
+Jenkinsfile
+.git
+build/
+.cache

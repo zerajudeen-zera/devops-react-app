@@ -1,0 +1,8 @@
+version: "3"
+services:
+  webapp:
+    container_name: webapp_container
+    image: zera18/react-ecom-app-prod:latest
+    ports:
+      - 80:80
+    
