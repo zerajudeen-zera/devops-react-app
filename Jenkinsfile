@@ -1,3 +1,9 @@
+properties([
+  parameters([
+    string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch to build (e.g., main or dev)')
+  ])
+])
+
 pipeline{
     agent any
     environment{
@@ -6,11 +12,6 @@ pipeline{
         TAG = 'latest'
     }
     stages{
-        stage('git repo checkout'){
-            steps{
-                git url: 'https://github.com/zerajudeen-zera/devops-react-app.git'
-            }
-        }
         stage("building"){
             steps{
                 sh './build.sh'
@@ -42,6 +43,9 @@ pipeline{
 
         }
         stage("deploy"){
+            when{
+                expression { BRANCH_NAME == 'main'}
+            }
             steps{
                 sh './deploy.sh'
             }
