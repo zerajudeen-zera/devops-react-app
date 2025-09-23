@@ -4,7 +4,7 @@ properties([
     string(name: 'AMAZON_EC2_USER', defaultValue: 'ubuntu', description: 'EC2 user name'),
     string(name: 'AMAZON_EC2_IP', defaultValue: '172.31.3.49', description: 'IP private IP'),
     string(name: 'COMPOSE_FILE', defaultValue: 'docker-compose.yml', description: 'Compose file path'),
-    string(name: 'KEY_PATH', defaultValue: '/var/lib/jenkins/workspace/key.pem', description: 'kep file path')
+    string(name: 'KEY_PATH', defaultValue: '/var/lib/jenkins/.ssh/key.pem', description: 'kep file path')
   ])
 ])
 
@@ -17,7 +17,7 @@ pipeline{
         AMAZON_EC2_USER = "ubuntu"
         AMAZON_EC2_IP = "172.31.3.49"
         COMPOSE_FILE = "docker-compose.yml"
-        KEY_PATH = "/var/lib/jenkins/workspace/key.pem"
+        KEY_PATH = "/var/lib/jenkins/.ssh/key.pem"
 
     }
     stages{

@@ -40,7 +40,7 @@ echo "🚀 Starting deployment process to the Amazon EC2 server...."
 : "${KEY_PATH:?Environment variable KEY_PATH not set}"
 : "${COMPOSE_FILE:?Environment variable COMPOSE_FILE not set}"
 
-echo "🔐 Adding EC2 host key to known_hosts..."
+echo "🔐 Adding EC2 host key to known_hosts...."
 ssh-keyscan -H "$AMAZON_EC2_IP" >> ~/.ssh/known_hosts
 
 echo "📦 Copying the compose file from Jenkins to EC2..."
