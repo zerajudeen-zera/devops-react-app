@@ -6,7 +6,7 @@ pipeline{
         TAG = 'latest'
     }
     stages{
-        stage('git checkout'){
+        stage('git repo checkout'){
             steps{
                 git url: 'https://github.com/zerajudeen-zera/devops-react-app.git'
             }
