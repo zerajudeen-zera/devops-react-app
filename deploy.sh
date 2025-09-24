@@ -32,7 +32,7 @@
 
 set -e  # Exit on any error
 
-echo "🚀 Starting deployment process to the Amazon EC2 server...."
+echo "Starting deployment process to the Amazon EC2 server...."
 
 # Validate required environment variables
 : "${AMAZON_EC2_USER:?Environment variable AMAZON_EC2_USER not set}"
@@ -43,13 +43,13 @@ echo "🚀 Starting deployment process to the Amazon EC2 server...."
 echo "Adding EC2 host key to known_hosts...."
 ssh-keyscan -H "$AMAZON_EC2_IP" >> ~/.ssh/known_hosts
 
-echo "📦 Copying the compose file from Jenkins to EC2..."
+echo "Copying the compose file from Jenkins to EC2..."
 scp -i "$KEY_PATH" "$COMPOSE_FILE" "$AMAZON_EC2_USER@$AMAZON_EC2_IP:/home/$AMAZON_EC2_USER/"
 
-echo "🔧 Deploying on EC2..."
+echo "Deploying on EC2..."
 ssh -i "$KEY_PATH" "$AMAZON_EC2_USER@$AMAZON_EC2_IP" "docker-compose -f /home/$AMAZON_EC2_USER/$COMPOSE_FILE up -d"
 
-echo "✅ Deployment complete!"
+echo "Deployment complete!"
 
 
 
