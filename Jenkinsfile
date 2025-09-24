@@ -37,7 +37,7 @@ pipeline{
             }
 
         }
-        stage("push"){
+        stage("push image"){
             steps{
                 script{
                     if(env.BRANCH_NAME == 'dev'){
